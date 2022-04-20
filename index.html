@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepdive</title>
+</head>
+<body>
+     
+</body>
+<script>
+    let x = 10;
+    let str = x.toString();
+    console.log( typeof str );
+    console.log( str );
+    console.log( typeof str, str );
+
+    let strS = x + '';
+    console.log( typeof str, str );
+
+    console.log( typeof x, x ); // x 변수의 값이 변경된 것은 아니다.
+
+    // 타입변환
+    console.log( "" + 10 );
+    console.log( 10 + "" );
+    console.log( + '10');
+
+    function abc(){};
+    console.log(true === abc);
+
+    // 불리언 타입
+    console.log(" 불리언 타입 ")
+
+    // function a(){};
+    // if a(){
+    //     console.log(Boolean.a();
+    // };
+    // if(0){
+    //     console.log();
+    // };
+
+    //
+    for (var i = 1; i <= 6; i++){
+        for (var j =i; j <=6; j++){
+            if (i+j === 6 ) console.log(`[${i}, ${j}]`);
+        }
+    }
+
+    let a = aa => 2;
+    console.log(a());
+
+    // let b = function(bb){
+    //     return( bb );
+    //     console.log( b );
+    // };
+    
+    let c = cc => [ "2 : 4", "3 : 5"] ;
+    console.log(c(2));
+
+</script>
+</html>
