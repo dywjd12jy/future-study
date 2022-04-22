@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    import { useState } from "react";
+
+const ForPage = () => {
+  const [text, setState] = useState("ForPage");
+  const [input, setInput] = useState('');
+
+// =====================================
+// const4 첫번째 문제
+  const test4First = () => {
+  
+    const jjtestArray = [2,3,4,5,6,7,8,9];
+    const ja = (currentValue) => {
+      const jb = [1,2,3,4,5,6,7,8,9];
+      const ji = (index) => {
+        console.log( currentValue + "x" + index + "=" + currentValue*index );
+      };
+      jb.forEach(ji);
+    };
+    jjtestArray.forEach(ja);
+    
+  };
+// const4 첫번째 문제 성공성공!!
+
+
+
+  // const4 두번째 문제
+  const test4Sec = () => {
+    console.log("test4 버튼 클릭");
+    // googoodan(1);
+  }; 
+
+  const googoodan = (gooNum) => {
+    for(let i = 1; i < 10; i++){
+      console.log(gooNum + "x" + i + "=" + gooNum * i);
+    };
+  };
+
+
+
+//   isNaN();  isNaN NaN인지 판별.
+//   Number();  Number 타입으로 변환.
+
+  const test5 = (event) => {
+    setInput(event.target.value);
+    console.log();
+  };
+
+  const test6 = () => {
+
+    const numberInput = Number(input);
+    if (isNaN(numberInput)) {
+        console.log("숫자를 입력해주세요.");
+    }
+    else if(0 > numberInput){
+        console.log("0 보다 큼");
+    }
+    else if(10 < numberInput){
+        console.log("10 보다 작음");
+    }
+    else{
+        googoodan(numberInput);
+    }
+  };
+//   googoodan(input);
+
+
+  const gugudan = (n) => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // const newFor = (currentValue) => {};
+    // arr.forEach(newFor);
+    const aFunc = (currentValue) => {
+    
+        return currentValue * n;
+    };
+    const aFunMap = arr.map(aFunc);
+     console.log(aFunMap);
+
+  };
+
+  const test10 = () => {
+    gugudan(8);
+  };
+</body>
+</html>

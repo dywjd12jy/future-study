@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    import { useState } from "react";
+
+const ForPage = () => {
+  const [text, setState] = useState("ForPage");
+
+  const test = () => {
+    console.log("hello");
+    // 배열의 선언 방법
+    const arr = ["apple", "banana", "peach"];
+    // 가장 기본적인 for문 이다.
+    // let i = 0; i < arr.length; i++ 해석
+    // let i = 0; 변수 선언
+    // i < arr.length 비교연산자
+    // i++ 증가연산자    -> ++ 어느쪽에 붙냐에 따라 다르다. -> 혼자 공부하세요.
+    // for ( let i = 0; i < arr.length; i++ )
+    //       변수 선언 ; 비교를 한다; 앞에 선언한 변수의 값을 증가시킨다.
+    //  0 부터 시작을하고, i 값이 arr이라는 변수의 길이보다 작으면 true ; 앞에 선언한 변수의 값을 증가시킨다.;
+    //  처음에 i 가 0 ; arr의 길이는 3
+    //  i < arr.length 비교한다. -> 0 < 3   -> true
+    //  위에서 비교한내용이 true 일때 { } 안에 내용을 실행한다.
+    //  console.log(arr[i]);  i => 0
+    //  {} 안의 내용이 끝나면, i++ 증감 시킨다. -> 1
+    //  i < arr.length 비교한다. -> 1 < 3   -> true
+    //  위에서 비교한내용이 true 일때 { } 안에 내용을 실행한다.
+    //  console.log(arr[i]);  i => 1
+    //  반복 하다가.. i = 2.. i = 3..
+    //  i 가 3이 되어버렸네..  i < arr.length; 는 어떻게 되나..  3 < 3 => false
+    //  false 일때는 for문이 종료된다.
+    //  배열은 0 부터 시작한다.
+    //  배열의 길이가 3이면 0 , 1 , 2 값이 있다.
+    // 배열에서의 값은 arr [0] [1] [2] 이런식으로 가져올수있다.
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+  };
+
+  // test2
+  // 과제 99단 만들기 , for문을 이용하자
+  // 제가 원하는 결과는
+  // 1 x 1 = 1
+  // 1 x 2 = 2
+  // ...
+  // 9 x 9 = 81
+  // 까지 나오기
+  // 인터넷 검색 x
+  const test2 = () => {
+    for (let i = 2; i < 10; i++) {
+      for (let j = 1; j < 10; j++) {
+        // function console.log ( a, b, c) {}
+        // a i + " * " + j + " = " + i * j       b 아무것도없음 ( undefined ) c 아무것도없음 ( undefined )
+        console.log(i + " * " + j + " = " + i * j);
+        // a i + " * " + j       b " = "       c i * j
+        console.log(i + " * " + j, " = ", i * j);
+      }
+    }
+  };
+// =====================================
+
+
+
+  const test3 = () => {
+    const arr = ["apple", "banana", "peach"];
+    // 첫번째
+    // for (let i = 0; i < arr.length; i++) {
+    //   console.log("현재 값은", currentValue);
+    //   console.log("나는 몇번째인가", index);
+    //   console.log("전체 배열은 뭔가", array);
+    // }
+    // arr.forEach(function() {})
+    // const func = (currentValue, index, array) => {
+    //   console.log("현재 값은", currentValue);
+    //   console.log("나는 몇번째인가", index);
+    //   console.log("전체 배열은 뭔가", array);
+    // };
+    // 이런걸 콜백 함수라고 한다.
+    // const forEach = ( func ) => {  할일을 하고,, 콜백함수를 실행한다. func(currentValue, index, array)  }
+
+
+    const func = (currentValue, index, array) => {};
+
+    // const fEach = (cb) => {
+    //   for (let i = 0; i < arr.length; i++) {
+    //     // 콜백 함수호출
+    //     cb(arr[i], i, arr);
+    //   }
+    // };
+    // 만들어져있는 함수 호출
+    console.log("만들어져있는 함수 호출");
+
+    arr.forEach(func);
+
+
+
+    // console.log("내가 만든 함수호출");
+    // // 내가 만든 함수호출
+    // fEach(func);
+  };
+
+
+//================== 총명님의 기출문제  ======================
+  // 내일 제가 출근할때까지
+
+  // 1. 구구단을 forEach를 사용해서 만들어보기
+
+  // 2. 매개변수로 몇단인지를 받아서 그 단을 출력 forEach, for 문 중 택 1
+  // test4(8)
+  // 8 * 1 = 8
+  // ....
+  // 8 * 9 = 72
+
+  //test4 함수는 숫자 매개변수를 받는 함수다.
+  //안에서는 받은 매개변수 값에 1~9를 곱한 값을 콘솔로그 찍는다.
+
+// const4 첫번째 문제
+  const test4First = () => {
+  //================== 정요 ======================
+    //   const t4FNum = [1,2,3,4,5,6,7,8,9];
+    //   const t4func = ( [currentValue] ) => {
+    //     const ii = (iii) => {
+    //       console.log( index + "x" + currentValue + "=" + index*currentValue );
+    //     };
+    //     t4func.forEach(iii);
+    //   };
+    //   t4FNum.forEach(t4func);
+    
+
+
+    // t4FNum 의 안에 배열을 하나씩 순회하여 t4func라는 함수를 실행한다.
+
+    // t4func 라는 함수 안에는 t4FNum의 배열값들이 들어가게 된다.
+    // t4func 의 안에 배열들을 하나씩 순회 하여 ii 함수가 실행된다.
+
+    // ii 라는 함수 안에 t4func의 배열 값들이 들어가게 된다.
+    // 
+    // t4func와 ii의 값을 consolo.log 를 통해 구구단을 출력해준다.
+
+
+    //================== 현우님 ======================
+    //2~9까지 원소인 배열이 있다.
+    // const testArray = [2,3,4,5,6,7,8,9];
+    // //배열을 순회하면서 함수를 실행한다.
+    
+    // testArray.forEach(함수)
+    // //함수가 배열 요소 하나를 받으면 그 배열 요소와  1부터 9까지 forEach을 실행.
+    // function 함수(currentValue){
+    //   //forEach에 들어가는 함수2 안에서 받는 순회 값과 함수가 배열 요소 하나를 받는 값을 console하면 끝
+    //   function 함수2(index){
+    //     console.log(currentValue * index)
+    //   }
+    //   [1,2,3,4,5,6,7,8,9].forEach(함수2)
+    // }
+    
+
+      //====foreach 설명
+      // const test4 = (paramNum) => {
+        
+      //   for (let index = 1; index < 10; index++) {
+      //     console.log(paramNum * index);
+          
+      //   }
+      //   // console.log(paramNum * 1);
+      //   // console.log(paramNum * 2);
+      //   // console.log(paramNum * 3);
+      //   // console.log(paramNum * 4);
+      //   // console.log(paramNum * 5);
+      //   // console.log(paramNum * 6);
+      //   // console.log(paramNum * 7);
+      //   // console.log(paramNum * 8);
+      //   // console.log(paramNum * 9);
+      // }
+
+      // test4(8)
+
+
+
+    //================ 정요 다시 도전 =================== 
+    // const jtestArray = [2,3,4,5,6,7,8,9];
+
+
+    // const a = (currentValue) => {
+    //   console.log("a");
+    //   const b = (index) => {
+    //     console.log
+    //     console.log(a*b);
+    //   };
+    //   a.forEach(b); // forEach를 중첩으로 사용하고싶었다ㅠ
+    // };
+    // jtestArray.forEach(a);
+
+    //=============== 배열을 두개 만들어서 해보기==============
+    //=============== const 사용해서 만들기 ==============
+    //=============== function을 사용하면 호이스팅에 영향을 받지 않고 만들 수 있지만 ==============
+    //=============== const 를 사용하여 만들줄 알아야 한다. ==============
+    const jjtestArray = [2,3,4,5,6,7,8,9];
+    const ja = (currentValue) => {
+      const jb = [1,2,3,4,5,6,7,8,9];
+      const ji = (index) => {
+        console.log( currentValue + "x" + index + "=" + currentValue*index );
+      };
+      jb.forEach(ji);
+    };
+    jjtestArray.forEach(ja);
+    
+  };
+// const4 첫번째 문제 성공성공!!
+
+
+
+  // const4 두번째 문제
+  const test4Sec = () => {
+    console.log("test4 버튼 클릭");
+    const googoodan = (gooNum) => {
+      for(let i = 1; i < 10; i++){
+        console.log(gooNum + "x" + i + "=" + gooNum * i);
+      };
+    };
+    googoodan(1);
+  }; 
+
+  const test4SecFor = () => {
+    const googooarray = [1,2,3,4,5,6,7,8,9];
+    const goo = (currentValue) => {
+      const gooinNum = () => {
+
+      };
+
+    };
+
+    googooarray.forEach(goo);
+  };
+
+  // const4 두번째 문제 성공성공!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return (
+    <div>
+      <h1>{text}</h1>
+      <button onClick={test3}>test3 click</button>
+      <button onClick={test4First}>test4-1 click</button>
+      <button onClick={test4Sec}>test4-2 click</button>
+      <button onClick={test4SecFor}>test4-2 click</button>
+    </div>
+  );
+};
+
+export default ForPage;
+
+</body>
+</html>
