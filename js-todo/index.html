@@ -6,8 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>바닐라 JS로 Todolist 만들기</title>
   </head>
+  <style>
+    @font-face {
+      font-family: "NanumBarunGothic";
+      font-style: normal;
+      font-weight: 400;
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+          format("embedded-opentype"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+          format("woff"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumBarunGothic";
+      font-style: normal;
+      font-weight: 700;
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix")
+          format("embedded-opentype"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff")
+          format("woff"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf")
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumBarunGothic";
+      font-style: normal;
+      font-weight: 300;
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+      src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix")
+          format("embedded-opentype"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff")
+          format("woff"),
+        url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf")
+          format("truetype");
+    }
+
+    html {
+      font-family: "NanumBarunGothic", sans-serif;
+    }
+    li {
+      margin-bottom: 1px;
+      display: flex;
+      align-items: center;
+    }
+    p {
+      margin: 0;
+    }
+    li button {
+      background-color: royalblue;
+      color: #fff;
+      padding: 5px 5px;
+      border-radius: 2px;
+      margin-left: 5px;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
   <body>
-    <p id="p">위의 텍스트는 동적으로 추가했습니다.</p>
+    <h1>바닐라JS - TodoList</h1>
+    <div>
+      <input type="text" class="input" />
+      <button onclick="addBtn();">추가</button>
+    </div>
+    <ul id="ul">
+      <li>
+        <input type="checkbox" />
+        <p>위의 텍스트는 동적으로 추가했습니다.</p>
+        <button>삭 제</button>
+      </li>
+    </ul>
     <script src="./index.js"></script>
   </body>
 </html>
