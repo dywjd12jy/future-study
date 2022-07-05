@@ -69,17 +69,37 @@
   </style>
   <body>
     <h1>바닐라JS - TodoList</h1>
-    <div>
-      <input type="text" class="input" />
-      <button onclick="addBtn();">추가</button>
-    </div>
-    <ul id="ul">
-      <li>
-        <input type="checkbox" />
-        <p>위의 텍스트는 동적으로 추가했습니다.</p>
-        <button>삭 제</button>
-      </li>
-    </ul>
+    <section>
+      <h2>개별 삭제</h2>
+      <div>
+        <input type="text" class="input" />
+        <button onclick="addBtn();">추가</button>
+      </div>
+      <ul id="ul">
+        <li>
+          <p>위의 텍스트는 동적으로 추가했습니다.</p>
+          <button>삭 제</button>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>체크박스를 활용한 삭제</h2>
+      <div>
+        <input type="text" id="inputValue2" />
+        <button onclick="addBtn2()">추가</button>
+      </div>
+      <ul id="checkList">
+        <li>
+          <input type="checkbox" id="checkBox" name="check"/>
+          <p>투두리스트 선택삭제하기</p>
+        </li>
+      </ul>
+      <input id="ABtn" type="checkbox" onclick="allBtnInput()">모두선택</button>
+      <button onclick="allBtn()">모두선택</button>
+      <button>전체삭제</button>
+      <button>선택삭제</button>
+      <input type="checkbox" id="checkOn" />
+    </section>
     <script src="./index.js"></script>
   </body>
 </html>
